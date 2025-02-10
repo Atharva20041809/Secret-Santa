@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #FF6347, #FF1493); /* Gradient Background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* .text Styling */
+.text {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    animation: textAppear 2s ease-in-out;
+}
+
+/* Animation for .text */
+@keyframes textAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* .container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* .hide Styling */
+.hide {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.hide:hover {
+    background-color: #e67e22;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* .next Styling */
+.next {
+    background-color: #1abc9c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.next:hover {
+    background-color: #16a085;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effects */
+button:focus {
+    outline: none;
+}
+
+.hide:active, .next:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .text {
+        font-size: 32px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hide, .next {
+        padding: 12px 25px;
+        font-size: 18px;
+    }
+}
+
