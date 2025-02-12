@@ -24,6 +24,7 @@ function shuffleArray(arr) {
     return arr;
 }
 text.innerText=`${array[present]}'s Turn`
+gift_obj={}
 next_turn.addEventListener("click",()=>{
     console.log(present)
     if(present>=n){
@@ -37,12 +38,28 @@ next_turn.addEventListener("click",()=>{
             return false
         }
     })
-    console.log("clicked")
-    text.innerText=`${array[present]} will gift to ${eligible[0]}`
-    gift_receivers.push(eligible[0])
-    present+=1
+    if(eligible.length==2){
+        if(gift_obj[eligible[0]]==array[present]){
+            console.log("clicked")
+            gift_obj[array[present]]=eligible[1];
+            text.innerText=`${array[present]} will gift to ${eligible[1]}`
+            gift_receivers.push(eligible[1])
+            present+=1
+        }else{
+            console.log("clicked")
+            gift_obj[array[present]]=eligible[0];
+            text.innerText=`${array[present]} will gift to ${eligible[0]}`
+            gift_receivers.push(eligible[0])
+            present+=1
+        }
+    }else{
+        console.log("clicked")
+        gift_obj[array[present]]=eligible[0];
+        text.innerText=`${array[present]} will gift to ${eligible[0]}`
+        gift_receivers.push(eligible[0])
+        present+=1
     }
-
+    }
 })
 hide.addEventListener("click",()=>{
     if(present>=n){
